@@ -1,0 +1,452 @@
+[
+    {
+        "id": 77016,
+        "rank": 1,
+        "adult": 0,
+        "title": "End of Watch",
+        "imdb_id": "tt1855199",
+        "mediatype": "movie",
+        "release_year": 2012
+    },
+    {
+        "id": 9473,
+        "rank": 2,
+        "adult": 0,
+        "title": "South Park Bigger Longer and Uncut",
+        "imdb_id": "tt0158983",
+        "mediatype": "movie",
+        "release_year": 1999
+    },
+    {
+        "id": 438799,
+        "rank": 3,
+        "adult": 0,
+        "title": "Overlord",
+        "imdb_id": "tt4530422",
+        "mediatype": "movie",
+        "release_year": 2018
+    },
+    {
+        "id": 1339713,
+        "rank": 4,
+        "adult": 0,
+        "title": "Obsession",
+        "imdb_id": "tt37287335",
+        "mediatype": "movie",
+        "release_year": 2026
+    },
+    {
+        "id": 936075,
+        "rank": 5,
+        "adult": 0,
+        "title": "Michael",
+        "imdb_id": "tt11378946",
+        "mediatype": "movie",
+        "release_year": 2026
+    },
+    {
+        "id": 511987,
+        "rank": 6,
+        "adult": 0,
+        "title": "Crawl",
+        "imdb_id": "tt8364368",
+        "mediatype": "movie",
+        "release_year": 2019
+    },
+    {
+        "id": 117,
+        "rank": 7,
+        "adult": 0,
+        "title": "The Untouchables",
+        "imdb_id": "tt0094226",
+        "mediatype": "movie",
+        "release_year": 1987
+    },
+    {
+        "id": 1325734,
+        "rank": 8,
+        "adult": 0,
+        "title": "The Drama",
+        "imdb_id": "tt33071426",
+        "mediatype": "movie",
+        "release_year": 2026
+    },
+    {
+        "id": 62213,
+        "rank": 9,
+        "adult": 0,
+        "title": "Dark Shadows",
+        "imdb_id": "tt1077368",
+        "mediatype": "movie",
+        "release_year": 2012
+    },
+    {
+        "id": 764,
+        "rank": 10,
+        "adult": 0,
+        "title": "The Evil Dead",
+        "imdb_id": "tt0083907",
+        "mediatype": "movie",
+        "release_year": 1981
+    },
+    {
+        "id": 37686,
+        "rank": 11,
+        "adult": 0,
+        "title": "Super 8",
+        "imdb_id": "tt1650062",
+        "mediatype": "movie",
+        "release_year": 2011
+    },
+    {
+        "id": 1669,
+        "rank": 12,
+        "adult": 0,
+        "title": "The Hunt for Red October",
+        "imdb_id": "tt0099810",
+        "mediatype": "movie",
+        "release_year": 1990
+    },
+    {
+        "id": 10466,
+        "rank": 13,
+        "adult": 0,
+        "title": "The Money Pit",
+        "imdb_id": "tt0091541",
+        "mediatype": "movie",
+        "release_year": 1986
+    },
+    {
+        "id": 10730,
+        "rank": 14,
+        "adult": 0,
+        "title": "King Kong",
+        "imdb_id": "tt0074751",
+        "mediatype": "movie",
+        "release_year": 1976
+    },
+    {
+        "id": 1292415,
+        "rank": 15,
+        "adult": 0,
+        "title": "Beast",
+        "imdb_id": "tt7708226",
+        "mediatype": "movie",
+        "release_year": 2026
+    },
+    {
+        "id": 12159,
+        "rank": 16,
+        "adult": 0,
+        "title": "What Dreams May Come",
+        "imdb_id": "tt0120889",
+        "mediatype": "movie",
+        "release_year": 1998
+    },
+    {
+        "id": 4929,
+        "rank": 17,
+        "adult": 0,
+        "title": "Hang 'Em High",
+        "imdb_id": "tt0061747",
+        "mediatype": "movie",
+        "release_year": 1968
+    },
+    {
+        "id": 1226863,
+        "rank": 18,
+        "adult": 0,
+        "title": "The Super Mario Galaxy Movie",
+        "imdb_id": "tt28650488",
+        "mediatype": "movie",
+        "release_year": 2026
+    },
+    {
+        "id": 1159559,
+        "rank": 19,
+        "adult": 0,
+        "title": "Scream 7",
+        "imdb_id": "tt27047903",
+        "mediatype": "movie",
+        "release_year": 2026
+    },
+    {
+        "id": 556574,
+        "rank": 20,
+        "adult": 0,
+        "title": "Hamilton",
+        "imdb_id": "tt8503618",
+        "mediatype": "movie",
+        "release_year": 2020
+    },
+    {
+        "id": 83542,
+        "rank": 21,
+        "adult": 0,
+        "title": "Cloud Atlas",
+        "imdb_id": "tt1371111",
+        "mediatype": "movie",
+        "release_year": 2012
+    },
+    {
+        "id": 10547,
+        "rank": 22,
+        "adult": 0,
+        "title": "The Arrival",
+        "imdb_id": "tt0115571",
+        "mediatype": "movie",
+        "release_year": 1996
+    },
+    {
+        "id": 8408,
+        "rank": 23,
+        "adult": 0,
+        "title": "Day of the Dead",
+        "imdb_id": "tt0088993",
+        "mediatype": "movie",
+        "release_year": 1985
+    },
+    {
+        "id": 11071,
+        "rank": 24,
+        "adult": 0,
+        "title": "Them!",
+        "imdb_id": "tt0047573",
+        "mediatype": "movie",
+        "release_year": 1954
+    },
+    {
+        "id": 41446,
+        "rank": 25,
+        "adult": 0,
+        "title": "Scream 4",
+        "imdb_id": "tt1262416",
+        "mediatype": "movie",
+        "release_year": 2011
+    },
+    {
+        "id": 11353,
+        "rank": 26,
+        "adult": 0,
+        "title": "Bowfinger",
+        "imdb_id": "tt0131325",
+        "mediatype": "movie",
+        "release_year": 1999
+    },
+    {
+        "id": 509,
+        "rank": 27,
+        "adult": 0,
+        "title": "Notting Hill",
+        "imdb_id": "tt0125439",
+        "mediatype": "movie",
+        "release_year": 1999
+    },
+    {
+        "id": 11974,
+        "rank": 28,
+        "adult": 0,
+        "title": "The 'Burbs",
+        "imdb_id": "tt0096734",
+        "mediatype": "movie",
+        "release_year": 1989
+    },
+    {
+        "id": 467905,
+        "rank": 29,
+        "adult": 0,
+        "title": "How to Make a Killing",
+        "imdb_id": "tt4357198",
+        "mediatype": "movie",
+        "release_year": 2026
+    },
+    {
+        "id": 1327819,
+        "rank": 30,
+        "adult": 0,
+        "title": "Hoppers",
+        "imdb_id": "tt26443616",
+        "mediatype": "movie",
+        "release_year": 2026
+    },
+    {
+        "id": 333371,
+        "rank": 31,
+        "adult": 0,
+        "title": "10 Cloverfield Lane",
+        "imdb_id": "tt1179933",
+        "mediatype": "movie",
+        "release_year": 2016
+    },
+    {
+        "id": 267860,
+        "rank": 32,
+        "adult": 0,
+        "title": "London Has Fallen",
+        "imdb_id": "tt3300542",
+        "mediatype": "movie",
+        "release_year": 2016
+    },
+    {
+        "id": 117263,
+        "rank": 33,
+        "adult": 0,
+        "title": "Olympus Has Fallen",
+        "imdb_id": "tt2302755",
+        "mediatype": "movie",
+        "release_year": 2013
+    },
+    {
+        "id": 9707,
+        "rank": 34,
+        "adult": 0,
+        "title": "Bubba Ho-tep",
+        "imdb_id": "tt0281686",
+        "mediatype": "movie",
+        "release_year": 2002
+    },
+    {
+        "id": 888,
+        "rank": 35,
+        "adult": 0,
+        "title": "The Flintstones",
+        "imdb_id": "tt0109813",
+        "mediatype": "movie",
+        "release_year": 1994
+    },
+    {
+        "id": 1259983,
+        "rank": 36,
+        "adult": 0,
+        "title": "Gourou",
+        "imdb_id": "tt31777964",
+        "mediatype": "movie",
+        "release_year": 2025
+    },
+    {
+        "id": 634429,
+        "rank": 37,
+        "adult": 0,
+        "title": "Shin Ultraman",
+        "imdb_id": "tt10737918",
+        "mediatype": "movie",
+        "release_year": 2022
+    },
+    {
+        "id": 1552,
+        "rank": 38,
+        "adult": 0,
+        "title": "Parenthood",
+        "imdb_id": "tt0098067",
+        "mediatype": "movie",
+        "release_year": 1989
+    },
+    {
+        "id": 2617,
+        "rank": 39,
+        "adult": 0,
+        "title": "The Great Outdoors",
+        "imdb_id": "tt0095253",
+        "mediatype": "movie",
+        "release_year": 1988
+    },
+    {
+        "id": 8989,
+        "rank": 40,
+        "adult": 0,
+        "title": "Harry and the Hendersons",
+        "imdb_id": "tt0093148",
+        "mediatype": "movie",
+        "release_year": 1987
+    },
+    {
+        "id": 11772,
+        "rank": 41,
+        "adult": 0,
+        "title": "The Haunting",
+        "imdb_id": "tt0057129",
+        "mediatype": "movie",
+        "release_year": 1963
+    },
+    {
+        "id": 1151272,
+        "rank": 42,
+        "adult": 0,
+        "title": "Sirât",
+        "imdb_id": "tt32298285",
+        "mediatype": "movie",
+        "release_year": 2025
+    },
+    {
+        "id": 83533,
+        "rank": 43,
+        "adult": 0,
+        "title": "Avatar: Fire and Ash",
+        "imdb_id": "tt1757678",
+        "mediatype": "movie",
+        "release_year": 2025
+    },
+    {
+        "id": 804370,
+        "rank": 44,
+        "adult": 0,
+        "title": "Arco",
+        "imdb_id": "tt14883538",
+        "mediatype": "movie",
+        "release_year": 2025
+    },
+    {
+        "id": 9871,
+        "rank": 45,
+        "adult": 0,
+        "title": "Ginger Snaps",
+        "imdb_id": "tt0210070",
+        "mediatype": "movie",
+        "release_year": 2000
+    },
+    {
+        "id": 55721,
+        "rank": 46,
+        "adult": 0,
+        "title": "Bridesmaids",
+        "imdb_id": "tt1478338",
+        "mediatype": "movie",
+        "release_year": 2011
+    },
+    {
+        "id": 18587,
+        "rank": 47,
+        "adult": 0,
+        "title": "10 to Midnight",
+        "imdb_id": "tt0085121",
+        "mediatype": "movie",
+        "release_year": 1983
+    },
+    {
+        "id": 744,
+        "rank": 48,
+        "adult": 0,
+        "title": "Top Gun",
+        "imdb_id": "tt0092099",
+        "mediatype": "movie",
+        "release_year": 1986
+    },
+    {
+        "id": 12092,
+        "rank": 49,
+        "adult": 0,
+        "title": "Alice in Wonderland",
+        "imdb_id": "tt0043274",
+        "mediatype": "movie",
+        "release_year": 1951
+    },
+    {
+        "id": 696393,
+        "rank": 50,
+        "adult": 0,
+        "title": "Cold Storage",
+        "imdb_id": "tt8879928",
+        "mediatype": "movie",
+        "release_year": 2026
+    }
+]
