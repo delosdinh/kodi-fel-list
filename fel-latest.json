@@ -176,8 +176,7 @@
         "adult": 0,
         "title": "Hamilton",
         "imdb_id": "tt8503618",
-        "mediatype": "movie",
-        "release_year": 2020
+        "mediatype": "movie"
     },
     {
         "id": 83542,
@@ -320,8 +319,7 @@
         "adult": 0,
         "title": "Gourou",
         "imdb_id": "tt31777964",
-        "mediatype": "movie",
-        "release_year": 2025
+        "mediatype": "movie"
     },
     {
         "id": 634429,
