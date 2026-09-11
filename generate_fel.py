@@ -1,26 +1,49 @@
 import json
 import urllib.request
-from datetime import date
+from datetime import date, datetime
 
 SOURCE_URL = (
     "https://raw.githubusercontent.com/"
     "Appz4Fun/fel-dolby-vision-movies/main/data/releases.json"
 )
 
-TODAY = date.today().isoformat()
+TODAY = date.today()
 
 
 def fetch_json(url):
     request = urllib.request.Request(
         url,
-        headers={"User-Agent": "Kodi-FEL-List/1.0"}
+        headers={
+            "User-Agent": "Kodi-FEL-List/1.0"
+        }
     )
 
     with urllib.request.urlopen(request, timeout=30) as response:
         return json.loads(response.read().decode("utf-8"))
 
 
-def convert_movie(movie, rank):
+def parse_date(value):
+    if not value:
+        return None
+
+    try:
+        return datetime.strptime(
+            value[:10],
+            "%Y-%m-%d"
+        ).date()
+    except (ValueError, TypeError):
+        return None
+
+
+def convert_movie(movie):
+    # Only confirmed FEL releases
+    if movie.get("fel_confirmed") is not True:
+        return None
+
+    # Movies only
+    if movie.get("media_type") != "movie":
+        return None
+
     tmdb_id = movie.get("tmdb_id")
 
     if not tmdb_id:
@@ -31,28 +54,26 @@ def convert_movie(movie, rank):
     if not title:
         return None
 
-    bluray_date = movie.get("bluray_release_date")
+    # Physical Blu-ray release date
+    bluray_date = parse_date(
+        movie.get("bluray_release_date")
+    )
 
-    # Only include titles that actually have a Blu-ray date.
-    if not bluray_date:
-        return None
-
-    # Do not show future releases in the "latest releases" widget.
-    if bluray_date > TODAY:
+    if bluray_date is None:
         return None
 
     release_year = None
 
-    release_date = movie.get("release_date")
-    if release_date and len(release_date) >= 4:
-        try:
-            release_year = int(release_date[:4])
-        except ValueError:
-            pass
+    theatrical_date = parse_date(
+        movie.get("release_date")
+    )
+
+    if theatrical_date:
+        release_year = theatrical_date.year
 
     item = {
         "id": int(tmdb_id),
-        "rank": rank,
+        "rank": 0,
         "adult": 0,
         "title": title,
         "imdb_id": movie.get("imdb_id", ""),
@@ -62,60 +83,163 @@ def convert_movie(movie, rank):
     if release_year:
         item["release_year"] = release_year
 
-    return item
+    return {
+        "date": bluray_date,
+        "item": item
+    }
+
+
+def save_json(filename, movies):
+    items = []
+
+    for rank, movie in enumerate(movies, start=1):
+        item = movie["item"].copy()
+        item["rank"] = rank
+        items.append(item)
+
+    with open(
+        filename,
+        "w",
+        encoding="utf-8"
+    ) as file:
+        json.dump(
+            items,
+            file,
+            indent=4,
+            ensure_ascii=False
+        )
+
+    print(
+        f"{filename}: {len(items)} movies"
+    )
 
 
 def main():
+
     data = fetch_json(SOURCE_URL)
 
-    movies = []
+    released = []
+    upcoming = []
 
     for movie in data:
-        if not movie.get("fel_confirmed"):
+
+        result = convert_movie(movie)
+
+        if result is None:
             continue
 
-        if movie.get("media_type") != "movie":
-            continue
+        release_date = result["date"]
 
-        item = convert_movie(movie, 0)
+        if release_date > TODAY:
+            upcoming.append(result)
+        else:
+            released.append(result)
 
-        if item:
-            movies.append((movie.get("bluray_release_date"), item))
+    # ---------------------------------------------------------
+    # RELEASED
+    # Newest Blu-ray first
+    # ---------------------------------------------------------
 
-    # Newest UHD/Blu-ray releases first.
-    movies.sort(
-        key=lambda x: x[0],
+    released.sort(
+        key=lambda x: x["date"],
         reverse=True
     )
 
-    # Generate the complete list.
-    all_items = []
+    # ---------------------------------------------------------
+    # UPCOMING
+    # Soonest Blu-ray first
+    # ---------------------------------------------------------
 
-    for index, (_, item) in enumerate(movies, start=1):
-        item["rank"] = index
-        all_items.append(item)
+    upcoming.sort(
+        key=lambda x: x["date"]
+    )
 
-    # Generate a smaller "latest" list.
-    latest_items = all_items[:50]
+    # ---------------------------------------------------------
+    # ALL
+    # Released + upcoming
+    # Newest/most recent date first
+    # ---------------------------------------------------------
 
-    with open("fel-all.json", "w", encoding="utf-8") as file:
-        json.dump(
-            all_items,
-            file,
-            indent=4,
-            ensure_ascii=False
+    all_movies = released + upcoming
+
+    all_movies.sort(
+        key=lambda x: x["date"],
+        reverse=True
+    )
+
+    # ---------------------------------------------------------
+    # LATEST 50
+    # ---------------------------------------------------------
+
+    latest = released[:50]
+
+    # ---------------------------------------------------------
+    # CATALOGUE
+    # Everything AFTER latest 50
+    # ---------------------------------------------------------
+
+    catalogue = released[50:]
+
+    # ---------------------------------------------------------
+    # SAVE
+    # ---------------------------------------------------------
+
+    save_json(
+        "fel-latest.json",
+        latest
+    )
+
+    save_json(
+        "fel-catalogue.json",
+        catalogue
+    )
+
+    save_json(
+        "fel-upcoming.json",
+        upcoming
+    )
+
+    save_json(
+        "fel-all.json",
+        all_movies
+    )
+
+    # ---------------------------------------------------------
+    # INFORMATION
+    # ---------------------------------------------------------
+
+    print()
+    print("====================================")
+    print("Dolby Vision FEL Lists")
+    print("====================================")
+    print(
+        f"Released FEL movies: {len(released)}"
+    )
+    print(
+        f"Latest 50: {len(latest)}"
+    )
+    print(
+        f"Catalogue after latest 50: {len(catalogue)}"
+    )
+    print(
+        f"Upcoming FEL movies: {len(upcoming)}"
+    )
+    print(
+        f"All FEL movies: {len(all_movies)}"
+    )
+
+    if latest:
+        print()
+        print(
+            "Newest released:",
+            latest[0]["item"]["title"]
         )
 
-    with open("fel-latest.json", "w", encoding="utf-8") as file:
-        json.dump(
-            latest_items,
-            file,
-            indent=4,
-            ensure_ascii=False
+    if upcoming:
+        print(
+            "Next upcoming:",
+            upcoming[0]["item"]["title"]
         )
-
-    print(f"Generated {len(all_items)} FEL movies.")
-    print(f"Latest list contains {len(latest_items)} movies.")
 
 
 if __name__ == "__main__":
