@@ -29,7 +29,10 @@ jobs:
           git config user.name "FEL List Bot"
           git config user.email "actions@users.noreply.github.com"
 
-          git add fel-all.json fel-latest.json
+          git add fel-latest.json
+          git add fel-catalogue.json
+          git add fel-upcoming.json
+          git add fel-all.json
 
           git diff --cached --quiet || \
             git commit -m "Update Dolby Vision FEL lists"
